@@ -53,4 +53,8 @@ public class MessageProcessor implements Processor {
         log.info("Output given: {}", output);
         exchange.getIn().setBody(output);
     }
+
+    private OutputModel buildOutput(String message, String enrichment){
+        return new OutputModel(message, new Date(), enrichment);
+    }
 }
